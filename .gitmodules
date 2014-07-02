@@ -1,0 +1,9 @@
+[submodule "confd"]
+	path = confd
+	url = git://github.com/aegypius/docker-confd.git
+[submodule "etcd"]
+	path = etcd
+	url = git://github.com/aegypius/docker-etcd.git
+[submodule "nginx"]
+	path = nginx
+	url = git://github.com/aegypius/docker-nginx.git
