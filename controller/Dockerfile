@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 # Install dependencies
 RUN apt-get update -q
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -qy nodejs rubygems build-essential curl git
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -qy nodejs build-essential curl git
 
 # Let's install go just like Docker (from source).
 RUN curl -Ls https://storage.googleapis.com/golang/go1.2.2.src.tar.gz | tar -v -C /usr/local -xz
@@ -13,5 +13,5 @@ ENV PATH /usr/local/go/bin:$PATH
 
 # Install controller ui
 
-# Setup Foreman
-RUN gem install foreman
+# Setup Forego
+RUN go get -u github.com/ddollar/forego
