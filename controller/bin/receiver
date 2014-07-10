@@ -1,0 +1,12 @@
+#!/usr/bin/env bash 
+PATH=$1
+COMMIT=$2
+
+URL="http://requestb.in/13e9tzn1"
+echo "-----→ Posting to $URL"
+/usr/bin/curl \
+	-X 'POST' \
+	-F "repository=$PATH" \
+	-F "revision=$COMMIT" \
+	-F contents=@- \
+	--silent $URL

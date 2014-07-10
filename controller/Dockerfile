@@ -1,17 +1,20 @@
-FROM ubuntu:latest
-
-# Install dependencies
-RUN apt-get update -q
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -qy nodejs build-essential curl git
-
-# Let's install go just like Docker (from source).
-RUN curl -Ls https://storage.googleapis.com/golang/go1.2.2.src.tar.gz | tar -v -C /usr/local -xz
-RUN cd /usr/local/go/src && ./make.bash --no-clean 2>&1
-ENV PATH /usr/local/go/bin:$PATH
+FROM aegypius/golang
 
 # Install gitreceived
+RUN go get -u github.com/flynn/gitreceived
 
-# Install controller ui
+VOLUME /cache /etc/gitreceived
 
-# Setup Forego
-RUN go get -u github.com/ddollar/forego
+
+# Setup scripts
+ADD ./bin/authchecker /usr/local/bin/authchecker
+ADD ./bin/receiver    /usr/local/bin/receiver 
+RUN chmod +x /usr/local/bin/authchecker \
+             /usr/local/bin/receiver
+
+
+ENV GITRECEIVED_CACHE /cache
+
+EXPOSE 22
+
+CMD gitreceived -n=false -r=$GITRECEIVED_CACHE -k=/etc/gitreceived/private.pem /usr/local/bin/authchecker /usr/local/bin/receiver
