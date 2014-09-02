@@ -1,21 +1,9 @@
-FROM ubuntu:latest
+FROM ruby:2
 
-ENV LOCALE C
-ENV DEBIAN_FRONTEND noninteractive 
-
-RUN apt-get update
-RUN apt-get install -y python-software-properties
-RUN apt-get install -y build-essential
-# Setup Ruby 2.0
-RUN add-apt-repository ppa:brightbox/ruby-ng-experimental
-RUN apt-get update
-RUN apt-get install -y ruby2.0 ruby2.0-dev
-
-RUN gem install --no-ri --no-rdoc bson_ext
-RUN gem install --no-ri --no-rdoc genghisapp
-ADD start /start
-RUN chmod +x /start
+RUN gem install --no-ri --no-rdoc \
+      bson_ext:1.9.2 \
+      genghisapp:2.3.11
 
 EXPOSE 5000
 
-ENTRYPOINT ["/start"]
+CMD /usr/local/bin/genghisapp --no-launch --foreground --port=5000 --servers ${DB_PORT_27017_TCP_ADDR}:${DB_PORT_27017_TCP_PORT}/${DB_NAME}
