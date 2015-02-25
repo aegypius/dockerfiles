@@ -27,9 +27,9 @@ RUN mkdir -p /etc/portage /usr/portage/distfiles \
   && rm -rf /var/lib/apt/lists/* \
 
   && echo "portage:x:250:250:portage:/var/tmp/portage:/bin/false"  > /etc/passwd \
-  && echo "portage::250:portage" > /etc/group
+  && echo "portage::250:portage" > /etc/group \
+  && ln -s /app/portage/bin/repoman /usr/bin/repoman
 
 WORKDIR /overlay
 
-ENTRYPOINT ["/app/portage/bin/repoman"]
-CMD ["full"]
+CMD ["repoman", "full"]
