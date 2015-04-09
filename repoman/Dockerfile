@@ -1,34 +1,30 @@
-FROM python:latest
+FROM alpine:3.1
 MAINTAINER Nicolas LAURENT <docker@aegypius.com>
 
-WORKDIR /app
+ADD http://gentoo.mirrors.ovh.net/gentoo-distfiles//distfiles/portage-2.2.14.tar.bz2 /tmp/portage.tar.bz2
+ADD http://gentoo.mirrors.ovh.net/gentoo-distfiles//snapshots/portage-latest.tar.xz /tmp/portage-latest.tar.xz
 
-ADD http://distfiles.gentoo.org/snapshots/portage-latest.tar.xz /app/portage-latest.tar.xz
-ADD http://distfiles.gentoo.org/distfiles/portage-2.2.14.tar.bz2 /app/portage.tar.bz2
+RUN apk --update upgrade \
+	&& apk add -t build-deps rsync \
+	&& apk add --update -t runtime-deps libxml2-utils python wget ca-certificates git bash \
 
-RUN mkdir -p /etc/portage /usr/portage/distfiles \
-  && tar xJf portage-latest.tar.xz -C /usr/ \
-  && rm portage-latest.tar.xz \
+	&& tar xvjf /tmp/portage.tar.bz2 \
+	&& mv portage* portage \
+	&& tar xJf /tmp/portage-latest.tar.xz -C /usr/ \
+	&& rsync --recursive --links --safe-links --perms --times --omit-dir-times \
+		--compress --force --whole-file --delete --stats --human-readable \
+		--timeout=180 --exclude=/distfiles --checksum \
+		rsync://rsync.gentoo.org/gentoo-portage /usr/portage \
 
-  && tar xjf portage.tar.bz2 \
-  && rm portage.tar.bz2 \
+	&& mkdir -p /etc/portage /usr/portage/distfiles \
+	&& cp /portage/cnf/repos.conf /etc/portage/ \
+	&& ln -s /usr/portage/profiles/default/linux/amd64/13.0/developer /etc/portage/make.profile \
+	&& echo "portage:x:250:250:portage:/var/tmp/portage:/bin/false"	> /etc/passwd \
+	&& echo "portage::250:portage" > /etc/group \
+	&& ln -s /portage/bin/repoman /usr/bin/repoman \
 
-  && mv portage* portage \
-  && cp portage/cnf/repos.conf /etc/portage/ \
-
-  && rsync --recursive --links --safe-links --perms --times --omit-dir-times \
-    --compress --force --whole-file --delete --stats --human-readable \
-    --timeout=180 --exclude=/distfiles --checksum --quiet \
-    rsync://rsync.gentoo.org/gentoo-portage /usr/portage \
-  && ln -s /usr/portage/profiles/default/linux/amd64/13.0/developer/ /etc/portage/make.profile \
-
-  && apt-get update -qy \
-  && DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y libxml2-utils \
-  && rm -rf /var/lib/apt/lists/* \
-
-  && echo "portage:x:250:250:portage:/var/tmp/portage:/bin/false"  > /etc/passwd \
-  && echo "portage::250:portage" > /etc/group \
-  && ln -s /app/portage/bin/repoman /usr/bin/repoman
+	&& apk del --purge build-deps \
+	&& rm -fvr /tmp/portage-latest.tar.xz /tmp/portage.tar.bz2 /var/cache/apk/*
 
 WORKDIR /overlay
 
