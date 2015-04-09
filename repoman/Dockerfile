@@ -1,4 +1,4 @@
-FROM dockerfile/python:latest
+FROM python:latest
 MAINTAINER Nicolas LAURENT <docker@aegypius.com>
 
 WORKDIR /app
