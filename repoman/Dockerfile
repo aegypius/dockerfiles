@@ -1,7 +1,7 @@
 FROM alpine:3.1
 MAINTAINER Nicolas LAURENT <docker@aegypius.com>
 
-ADD http://gentoo.mirrors.ovh.net/gentoo-distfiles//distfiles/portage-2.2.14.tar.bz2 /tmp/portage.tar.bz2
+ADD http://gentoo.mirrors.ovh.net/gentoo-distfiles//distfiles/portage-2.2.18.tar.bz2 /tmp/portage.tar.bz2
 ADD http://gentoo.mirrors.ovh.net/gentoo-distfiles//snapshots/portage-latest.tar.xz /tmp/portage-latest.tar.xz
 
 RUN apk --update upgrade \
