@@ -1,0 +1,8 @@
+sickrage:
+  build: .
+  ports:
+    - "8081:8081"
+  volumes:
+    - ~/.cache/sickrage:/data
+  cap_add:
+    - NET_ADMIN

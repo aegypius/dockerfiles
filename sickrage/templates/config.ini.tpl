@@ -84,8 +84,8 @@ metadata_tivo = 0|0|0|0|0|0|0|0|0|0
 metadata_mede8er = 0|0|0|0|0|0|0|0|0|0
 backlog_days = 10
 cache_dir = cache
-root_dirs = 0|/data/TV-Shows
-tv_download_dir = /data/Downloading
+root_dirs = 0|{{ default .Env.SB_DATA "" }}/TV-Shows
+tv_download_dir = {{ default .Env.SB_DATA "" }}/Downloading
 keep_processed_dir = 0
 process_method = move
 move_associated_files = 1
@@ -104,7 +104,7 @@ require_words = ""
 calendar_unprotected = 1
 [Blackhole]
 nzb_dir = ""
-torrent_dir = "/data/Torrents"
+torrent_dir = "{{ default .Env.SB_DATA "" }}/Torrents"
 [KICKASSTORRENTS]
 kickasstorrents = 1
 kickasstorrents_confirmed = 1
@@ -414,7 +414,7 @@ torrent_password = {{ default .Env.TORRENT_PASSWORD "" }}
 {{ else }}
   torrent_host = http://transmission.{{ default .Env.PROXY_DOMAIN "torrent.dl" }}:9091/
 {{ end }}
-torrent_path = {{ default .Env.TORRENT_PATH "/downloads" }}
+torrent_path = {{ .Env.SB_DATA }}/Downloads
 torrent_seed_time = 0
 torrent_paused = 0
 torrent_high_bandwidth = 0
