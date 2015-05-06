@@ -4,7 +4,7 @@ MAINTAINER Nicolas LAURENT <docker@aegypius.com>
 
 RUN apk --update upgrade \
 	&& apk add -t build-deps curl ca-certificates \
-	&& apk add -t runtime-deps git python py-pip py-virtualenv dnsmasq bash \
+	&& apk add -t runtime-deps git python py-pip py-virtualenv dnsmasq bash unrar \
 	&& curl -sL https://github.com/jwilder/dockerize/releases/download/v0.0.2/dockerize-linux-amd64-v0.0.2.tar.gz | tar xvz -C /usr/local/bin \
 	&& git clone git://github.com/SiCKRAGETV/SickRage /app \
 	&& virtualenv venv \
