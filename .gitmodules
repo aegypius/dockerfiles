@@ -7,3 +7,6 @@
 [submodule "nginx"]
 	path = nginx
 	url = git://github.com/aegypius/docker-nginx.git
+[submodule "mailcatcher"]
+	path = mailcatcher
+	url = git://github.com/aegypius/docker-mailcatcher.git
