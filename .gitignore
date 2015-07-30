@@ -1,1 +1,4 @@
 docker-compose.yml
+_builds
+_projects
+_steps
