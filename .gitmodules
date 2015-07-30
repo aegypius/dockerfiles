@@ -10,3 +10,6 @@
 [submodule "mailcatcher"]
 	path = mailcatcher
 	url = git://github.com/aegypius/docker-mailcatcher.git
+[submodule "repoman"]
+	path = repoman
+	url = git://github.com/aegypius/docker-repoman.git
