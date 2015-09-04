@@ -2,12 +2,13 @@ FROM alpine:latest
 MAINTAINER Nicolas LAURENT <docker@aegypius.com>
 
 RUN apk --update upgrade \
-	&& apk add -t build-deps curl ca-certificates \
+	&& apk add -t build-deps curl ca-certificates gcc \
 	&& apk add -t runtime-deps git python py-pip py-virtualenv dnsmasq bash unrar \
 	&& curl -sL https://github.com/jwilder/dockerize/releases/download/v0.0.2/dockerize-linux-amd64-v0.0.2.tar.gz | tar xvz -C /usr/local/bin \
 	&& git clone git://github.com/SiCKRAGETV/SickRage /app \
 	&& virtualenv venv \
-	&& venv/bin/pip install "cheetah>=2.1.0" "supervisor>=3.1.3" \
+        && venv/bin/pip install -r /app/requirements.txt \
+        && venv/bin/pip install supervisor \
 	&& apk del --purge build-deps \
 	&& rm -vfr /var/cache/apk/*
 
@@ -22,12 +23,12 @@ CMD ["docker-start"]
 VOLUME ["/data"]
 EXPOSE 8081
 
-ENV PATH                 /usr/local/bin:$PATH
-ENV OPEN_FILE_LIMIT      32768
-ENV SUPERVISOR_LOG_LEVEL INFO
-ENV SICKRAGE_CHANNEL     master
-ENV UPDATE_FREQUENCY     28800
-ENV SB_HOME              /app
-ENV SB_USER              root
-ENV SB_PORT              8081
-ENV SB_DATA              /data
+ENV PATH=/usr/local/bin:$PATH \
+    OPEN_FILE_LIMIT=32768 \
+    SUPERVISOR_LOG_LEVEL=WARN \
+    SICKRAGE_CHANNEL=master \
+    UPDATE_FREQUENCY=28800 \
+    SB_HOME=/app \
+    SB_USER=root \
+    SB_PORT=8081 \
+    SB_DATA=/data
