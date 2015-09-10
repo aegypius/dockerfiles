@@ -21,6 +21,7 @@ autorestart             = unexpected
 stopsignal              = TERM
 stopasgroup             = true
 stopwaitsecs            = 10
+startretries            = 3
 stdout_logfile          = /dev/stderr
 stdout_logfile_maxbytes = 0
 stderr_logfile          = /dev/stderr
