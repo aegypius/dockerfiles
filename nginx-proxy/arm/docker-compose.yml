@@ -1,0 +1,7 @@
+nginx-proxy:
+  image: quay.io/aegypius/nginx-proxy:latest-arm
+  ports:
+   - 80
+   - 443
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro

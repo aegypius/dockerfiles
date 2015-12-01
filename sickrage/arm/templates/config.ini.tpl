@@ -1,0 +1,800 @@
+[General]
+git_autoissues = 0
+git_username = {{ default .Env.GIT_USERNAME "" }}
+git_password = {{ default .Env.GIT_PASSWORD "" }}
+git_reset = 0
+branch = {{ default .Env.SICKRAGE_CHANNEL "master" }}
+git_remote = origin
+git_remote_url = https://github.com/SiCKRAGETV/SickRage.git
+cur_commit_hash =
+cur_commit_branch = ""
+config_version = 7
+encryption_version = 0
+log_dir = Logs
+log_nr = 5
+log_size = 1048576
+socket_timeout = None
+web_port = 8081
+web_host = 0.0.0.0
+web_ipv6 = 0
+web_log = 0
+web_root = ""
+web_username = "{{ default .Env.WEB_USERNAME "" }}"
+web_password = "{{ default .Env.WEB_PASSWORD "" }}"
+web_use_gzip = 1
+ssl_verify = 1
+download_url = ""
+localhost_ip = ""
+cpu_preset = NORMAL
+anon_redirect = http://dereferer.org/?
+api_key = cf001011d09750f4d635e7c5362489d0
+debug = {{ default .Env.SB_DEBUG "0" }}
+default_page = home
+enable_https = 0
+https_cert = server.crt
+https_key = server.key
+handle_reverse_proxy = 0
+use_nzbs = 0
+use_torrents = 1
+nzb_method = blackhole
+torrent_method = transmission
+usenet_retention = 500
+autopostprocesser_frequency = 10
+dailysearch_frequency = 20
+backlog_frequency = 720
+update_frequency = 12
+showupdate_hour = 3
+download_propers = 1
+randomize_providers = 0
+check_propers_interval = 4h
+allow_high_priority = 1
+skip_removed_files = 0
+quality_default = 500
+status_default = 3
+status_default_after = 3
+flatten_folders_default = 0
+indexer_default = 0
+indexer_timeout = 20
+anime_default = 0
+scene_default = 0
+provider_order = kickasstorrents thepiratebay rarbg tokyotoshokan nyaatorrents hdbits btn speedcd torrentbytes iptorrents torrentday sceneaccess bitsoup hdtorrents freshontv nextgen t411 torrentleech
+version_notify = 1
+auto_update = 0
+notify_on_update = 1
+naming_strip_year = 1
+naming_pattern = Season %0S/%SN - S%0SE%0E - %EN
+naming_custom_abd = 1
+naming_abd_pattern = Season %0S/%SN - %A-D - %EN
+naming_custom_sports = 0
+naming_sports_pattern = %SN - %A-D - %EN
+naming_custom_anime = 0
+naming_anime_pattern = Season %0S/%SN - S%0SE%0E - %EN
+naming_multi_ep = 32
+naming_anime_multi_ep = 1
+naming_anime = 3
+indexerDefaultLang = en
+ep_default_deleted_status = 6
+launch_browser = 1
+trash_remove_show = 0
+trash_rotate_logs = 0
+sort_article = 0
+proxy_setting = ""
+proxy_indexers = 1
+use_listview = 0
+metadata_kodi = 1|1|1|1|1|1|1|1|1|1
+metadata_kodi_12plus = 0|0|0|0|0|0|0|0|0|0
+metadata_mediabrowser = 0|0|0|0|0|0|0|0|0|0
+metadata_ps3 = 0|0|0|0|0|0|0|0|0|0
+metadata_wdtv = 0|0|0|0|0|0|0|0|0|0
+metadata_tivo = 0|0|0|0|0|0|0|0|0|0
+metadata_mede8er = 0|0|0|0|0|0|0|0|0|0
+backlog_days = 10
+cache_dir = cache
+root_dirs = 0|{{ default .Env.SB_DATA "" }}/TV-Shows
+tv_download_dir = {{ default .Env.SB_DATA "" }}/Downloading
+keep_processed_dir = 0
+process_method = move
+del_rar_contents = 0
+move_associated_files = 1
+sync_files = "!sync,lftp-pget-status,part,bts,!qb"
+postpone_if_sync_files = 1
+nfo_rename = 1
+process_automatically = 1
+no_delete = 0
+unpack = 0
+rename_episodes = 1
+airdate_episodes = 0
+create_missing_show_dirs = 0
+add_shows_wo_dir = 0
+extra_scripts = ""
+git_path = ""
+ignore_words = "german,french,core2hd,dutch,swedish,reenc,MrLss,hevc,x265"
+require_words = ""
+calendar_unprotected = 1
+no_restart = 0
+developer = 0
+display_all_seasons = 1
+[Blackhole]
+nzb_dir = ""
+torrent_dir = "{{ default .Env.SB_DATA "" }}/Torrents"
+[KICKASSTORRENTS]
+kickasstorrents = 1
+kickasstorrents_confirmed = 1
+kickasstorrents_ratio = 1
+kickasstorrents_minseed = 11
+kickasstorrents_minleech = 0
+kickasstorrents_proxy = 0
+kickasstorrents_proxy_url = http://proxite.eu/
+kickasstorrents_search_mode = sponly
+kickasstorrents_search_fallback = 1
+kickasstorrents_enable_daily = 1
+kickasstorrents_enable_backlog = 1
+[THEPIRATEBAY]
+thepiratebay = 1
+thepiratebay_confirmed = 1
+thepiratebay_ratio = 1
+thepiratebay_minseed = 11
+thepiratebay_minleech = 0
+thepiratebay_proxy = 0
+thepiratebay_proxy_url = http://proxite.eu/
+thepiratebay_search_mode = sponly
+thepiratebay_search_fallback = 1
+thepiratebay_enable_daily = 1
+thepiratebay_enable_backlog = 1
+[RARBG]
+rarbg = 1
+rarbg_ranked = 0
+rarbg_sorting = seeders
+rarbg_ratio = 1
+rarbg_minseed = 0
+rarbg_minleech = 0
+rarbg_proxy = 0
+rarbg_proxy_url = http://proxite.eu/
+rarbg_search_mode = sponly
+rarbg_search_fallback = 1
+rarbg_enable_daily = 1
+rarbg_enable_backlog = 1
+[TOKYOTOSHOKAN]
+tokyotoshokan = 0
+tokyotoshokan_ratio = 1
+tokyotoshokan_proxy = 0
+tokyotoshokan_proxy_url = http://proxite.eu/
+tokyotoshokan_search_mode = sponly
+tokyotoshokan_search_fallback = 1
+tokyotoshokan_enable_daily = 1
+tokyotoshokan_enable_backlog = 1
+[NYAATORRENTS]
+nyaatorrents = 0
+nyaatorrents_ratio = 1
+nyaatorrents_proxy = 0
+nyaatorrents_proxy_url = http://proxite.eu/
+nyaatorrents_search_mode = sponly
+nyaatorrents_search_fallback = 1
+nyaatorrents_enable_daily = 1
+nyaatorrents_enable_backlog = 1
+[HDBITS]
+hdbits = 0
+hdbits_username = ""
+hdbits_passkey = ""
+hdbits_ratio = ""
+hdbits_proxy = 0
+hdbits_proxy_url = http://proxite.eu/
+hdbits_search_mode = eponly
+hdbits_search_fallback = 0
+hdbits_enable_daily = 1
+hdbits_enable_backlog = 1
+[BTN]
+btn = 0
+btn_api_key = ""
+btn_ratio = ""
+btn_proxy = 0
+btn_proxy_url = http://proxite.eu/
+btn_search_mode = eponly
+btn_search_fallback = 0
+btn_enable_daily = 1
+btn_enable_backlog = 1
+[SPEEDCD]
+speedcd = 0
+speedcd_username = ""
+speedcd_password = ""
+speedcd_ratio = ""
+speedcd_minseed = 0
+speedcd_minleech = 0
+speedcd_proxy = 0
+speedcd_proxy_url = http://proxite.eu/
+speedcd_freeleech = 0
+speedcd_search_mode = eponly
+speedcd_search_fallback = 0
+speedcd_enable_daily = 1
+speedcd_enable_backlog = 1
+[TORRENTBYTES]
+torrentbytes = 0
+torrentbytes_username = ""
+torrentbytes_password = ""
+torrentbytes_ratio = ""
+torrentbytes_minseed = 0
+torrentbytes_minleech = 0
+torrentbytes_proxy = 0
+torrentbytes_proxy_url = http://proxite.eu/
+torrentbytes_search_mode = eponly
+torrentbytes_search_fallback = 0
+torrentbytes_enable_daily = 1
+torrentbytes_enable_backlog = 1
+[IPTORRENTS]
+iptorrents = 0
+iptorrents_username = ""
+iptorrents_password = ""
+iptorrents_ratio = ""
+iptorrents_proxy = 0
+iptorrents_proxy_url = http://proxite.eu/
+iptorrents_freeleech = 0
+iptorrents_search_mode = eponly
+iptorrents_search_fallback = 0
+iptorrents_enable_daily = 1
+iptorrents_enable_backlog = 1
+[TORRENTDAY]
+torrentday = 0
+torrentday_username = ""
+torrentday_password = ""
+torrentday_ratio = ""
+torrentday_minseed = 0
+torrentday_minleech = 0
+torrentday_proxy = 0
+torrentday_proxy_url = http://proxite.eu/
+torrentday_freeleech = 0
+torrentday_search_mode = eponly
+torrentday_search_fallback = 0
+torrentday_enable_daily = 1
+torrentday_enable_backlog = 1
+[SCENEACCESS]
+sceneaccess = 0
+sceneaccess_username = ""
+sceneaccess_password = ""
+sceneaccess_ratio = ""
+sceneaccess_minseed = 0
+sceneaccess_minleech = 0
+sceneaccess_proxy = 0
+sceneaccess_proxy_url = http://proxite.eu/
+sceneaccess_search_mode = eponly
+sceneaccess_search_fallback = 0
+sceneaccess_enable_daily = 1
+sceneaccess_enable_backlog = 1
+[BITSOUP]
+bitsoup = 0
+bitsoup_username = ""
+bitsoup_password = ""
+bitsoup_ratio = ""
+bitsoup_minseed = 0
+bitsoup_minleech = 0
+bitsoup_proxy = 0
+bitsoup_proxy_url = http://proxite.eu/
+bitsoup_search_mode = eponly
+bitsoup_search_fallback = 0
+bitsoup_enable_daily = 1
+bitsoup_enable_backlog = 1
+[HDTORRENTS]
+hdtorrents = 0
+hdtorrents_username = ""
+hdtorrents_password = ""
+hdtorrents_ratio = ""
+hdtorrents_minseed = 0
+hdtorrents_minleech = 0
+hdtorrents_proxy = 0
+hdtorrents_proxy_url = http://proxite.eu/
+hdtorrents_search_mode = eponly
+hdtorrents_search_fallback = 0
+hdtorrents_enable_daily = 1
+hdtorrents_enable_backlog = 1
+[FRESHONTV]
+freshontv = 0
+freshontv_username = ""
+freshontv_password = ""
+freshontv_ratio = ""
+freshontv_minseed = 0
+freshontv_minleech = 0
+freshontv_proxy = 0
+freshontv_proxy_url = http://proxite.eu/
+freshontv_freeleech = 0
+freshontv_search_mode = eponly
+freshontv_search_fallback = 0
+freshontv_enable_daily = 1
+freshontv_enable_backlog = 1
+[NEXTGEN]
+nextgen = 0
+nextgen_username = ""
+nextgen_password = ""
+nextgen_ratio = ""
+nextgen_proxy = 0
+nextgen_proxy_url = http://proxite.eu/
+nextgen_search_mode = eponly
+nextgen_search_fallback = 0
+nextgen_enable_daily = 1
+nextgen_enable_backlog = 1
+[T411]
+t411 = 0
+t411_username = ""
+t411_password = ""
+t411_ratio = ""
+t411_proxy = 0
+t411_proxy_url = http://proxite.eu/
+t411_search_mode = eponly
+t411_search_fallback = 0
+t411_enable_daily = 1
+t411_enable_backlog = 1
+[TORRENTLEECH]
+torrentleech = 0
+torrentleech_username = ""
+torrentleech_password = ""
+torrentleech_ratio = ""
+torrentleech_minseed = 0
+torrentleech_minleech = 0
+torrentleech_proxy = 0
+torrentleech_proxy_url = http://proxite.eu/
+torrentleech_search_mode = eponly
+torrentleech_search_fallback = 0
+torrentleech_enable_daily = 1
+torrentleech_enable_backlog = 1
+[HOUNDDAWGS]
+hounddawgs = 0
+hounddawgs_username = ""
+hounddawgs_password = ""
+hounddawgs_ratio = ""
+hounddawgs_minseed = 0
+hounddawgs_minleech = 0
+hounddawgs_proxy = 0
+hounddawgs_proxy_url = ""
+hounddawgs_search_mode = eponly
+hounddawgs_search_fallback = 0
+hounddawgs_enable_daily = 1
+hounddawgs_enable_backlog = 1
+[ALPHARATIO]
+alpharatio = 0
+alpharatio_username = ""
+alpharatio_password = ""
+alpharatio_ratio = ""
+alpharatio_minseed = 0
+alpharatio_minleech = 0
+alpharatio_proxy = 0
+alpharatio_proxy_url = ""
+alpharatio_search_mode = eponly
+alpharatio_search_fallback = 0
+alpharatio_enable_daily = 1
+alpharatio_enable_backlog = 1
+[SCENETIME]
+scenetime = 0
+scenetime_username = ""
+scenetime_password = ""
+scenetime_ratio = ""
+scenetime_minseed = 0
+scenetime_minleech = 0
+scenetime_proxy = 0
+scenetime_proxy_url = ""
+scenetime_search_mode = eponly
+scenetime_search_fallback = 0
+scenetime_enable_daily = 1
+scenetime_enable_backlog = 1
+[TNTVILLAGE]
+tntvillage = 0
+tntvillage_username = ""
+tntvillage_password = ""
+tntvillage_ratio = ""
+tntvillage_minseed = 0
+tntvillage_minleech = 0
+tntvillage_proxy = 0
+tntvillage_proxy_url = ""
+tntvillage_search_mode = eponly
+tntvillage_search_fallback = 0
+tntvillage_enable_daily = 1
+tntvillage_enable_backlog = 1
+tntvillage_cat = 0
+tntvillage_subtitle = 0
+[XTHOR]
+xthor = 0
+xthor_username = ""
+xthor_password = ""
+xthor_ratio = ""
+xthor_proxy = 0
+xthor_proxy_url = ""
+xthor_search_mode = eponly
+xthor_search_fallback = 0
+xthor_enable_daily = 1
+xthor_enable_backlog = 1
+[SHAZBAT_TV]
+shazbat_tv = 0
+shazbat_tv_passkey = ""
+shazbat_tv_ratio = ""
+shazbat_tv_options = ""
+shazbat_tv_proxy = 0
+shazbat_tv_proxy_url = ""
+shazbat_tv_search_mode = eponly
+shazbat_tv_search_fallback = 0
+shazbat_tv_enable_daily = 1
+shazbat_tv_enable_backlog = 1
+[MORETHANTV]
+morethantv = 0
+morethantv_username = ""
+morethantv_password = ""
+morethantv_ratio = ""
+morethantv_minseed = 0
+morethantv_minleech = 0
+morethantv_proxy = 0
+morethantv_proxy_url = ""
+morethantv_freeleech = 0
+morethantv_search_mode = eponly
+morethantv_search_fallback = 0
+morethantv_enable_daily = 1
+morethantv_enable_backlog = 1
+[FRENCHTORRENTDB]
+frenchtorrentdb = 0
+frenchtorrentdb_username = ""
+frenchtorrentdb_password = ""
+frenchtorrentdb_ratio = ""
+frenchtorrentdb_minseed = 0
+frenchtorrentdb_minleech = 0
+frenchtorrentdb_proxy = 0
+frenchtorrentdb_proxy_url = ""
+frenchtorrentdb_search_mode = eponly
+frenchtorrentdb_search_fallback = 0
+frenchtorrentdb_enable_daily = 1
+frenchtorrentdb_enable_backlog = 1
+[TITANSOFTV]
+titansoftv = 0
+titansoftv_api_key = ""
+titansoftv_ratio = ""
+titansoftv_proxy = 0
+titansoftv_proxy_url = ""
+titansoftv_search_mode = eponly
+titansoftv_search_fallback = 0
+titansoftv_enable_daily = 1
+titansoftv_enable_backlog = 1
+[BTDIGG]
+btdigg = 0
+btdigg_proxy = 0
+btdigg_proxy_url = ""
+btdigg_search_mode = eponly
+btdigg_search_fallback = 0
+btdigg_enable_daily = 1
+btdigg_enable_backlog = 1
+[CPASBIEN]
+cpasbien = 0
+cpasbien_ratio = ""
+cpasbien_proxy = 0
+cpasbien_proxy_url = ""
+cpasbien_search_mode = eponly
+cpasbien_search_fallback = 0
+cpasbien_enable_daily = 1
+cpasbien_enable_backlog = 1
+[LIBERTALIA]
+libertalia = 0
+libertalia_username = ""
+libertalia_password = ""
+libertalia_ratio = ""
+libertalia_minseed = 0
+libertalia_minleech = 0
+libertalia_proxy = 0
+libertalia_proxy_url = ""
+libertalia_search_mode = eponly
+libertalia_search_fallback = 0
+libertalia_enable_daily = 1
+libertalia_enable_backlog = 1
+[BLUETIGERS]
+bluetigers = 0
+bluetigers_username = ""
+bluetigers_password = ""
+bluetigers_ratio = ""
+bluetigers_proxy = 0
+bluetigers_proxy_url = ""
+bluetigers_search_mode = eponly
+bluetigers_search_fallback = 0
+bluetigers_enable_daily = 1
+bluetigers_enable_backlog = 1
+[FNT]
+fnt = 0
+fnt_username = ""
+fnt_password = ""
+fnt_ratio = ""
+fnt_minseed = 0
+fnt_minleech = 0
+fnt_proxy = 0
+fnt_proxy_url = ""
+fnt_search_mode = eponly
+fnt_search_fallback = 0
+fnt_enable_daily = 1
+fnt_enable_backlog = 1
+[NZBS_ORG]
+nzbs_org = 0
+nzbs_org_search_mode = eponly
+nzbs_org_search_fallback = 0
+nzbs_org_enable_daily = 1
+nzbs_org_enable_backlog = 1
+[ANIMENZB]
+animenzb = 0
+animenzb_search_mode = eponly
+animenzb_search_fallback = 0
+animenzb_enable_daily = 1
+animenzb_enable_backlog = 1
+[BINSEARCH]
+binsearch = 0
+binsearch_search_mode = eponly
+binsearch_search_fallback = 0
+binsearch_enable_daily = 1
+binsearch_enable_backlog = 1
+[OMGWTFNZBS]
+omgwtfnzbs = 0
+omgwtfnzbs_api_key = ""
+omgwtfnzbs_username = ""
+omgwtfnzbs_search_mode = eponly
+omgwtfnzbs_search_fallback = 0
+omgwtfnzbs_enable_daily = 1
+omgwtfnzbs_enable_backlog = 1
+[WOMBLE_S_INDEX]
+womble_s_index = 0
+womble_s_index_search_mode = eponly
+womble_s_index_search_fallback = 0
+womble_s_index_enable_daily = 1
+womble_s_index_enable_backlog = 1
+[NZB_CAT]
+nzb_cat = 0
+nzb_cat_search_mode = eponly
+nzb_cat_search_fallback = 0
+nzb_cat_enable_daily = 1
+nzb_cat_enable_backlog = 1
+[NZBGEEK]
+nzbgeek = 0
+nzbgeek_search_mode = eponly
+nzbgeek_search_fallback = 0
+nzbgeek_enable_daily = 1
+nzbgeek_enable_backlog = 1
+[USENET_CRAWLER]
+usenet_crawler = 0
+usenet_crawler_search_mode = eponly
+usenet_crawler_search_fallback = 0
+usenet_crawler_enable_daily = 1
+usenet_crawler_enable_backlog = 1
+[NZBs]
+nzbs = 0
+nzbs_uid = ""
+nzbs_hash = ""
+[Newzbin]
+newzbin = 0
+newzbin_username = ""
+newzbin_password = ""
+[SABnzbd]
+sab_username = ""
+sab_password = ""
+sab_apikey = ""
+sab_category = tv
+sab_category_anime = anime
+sab_host = ""
+sab_forced = 0
+[NZBget]
+nzbget_username = nzbget
+nzbget_password = tegbzn6789
+nzbget_category = tv
+nzbget_category_anime = anime
+nzbget_host = ""
+nzbget_use_https = 0
+nzbget_priority = 100
+[TORRENT]
+torrent_username = {{ default .Env.TORRENT_USERNAME "" }}
+torrent_password = {{ default .Env.TORRENT_PASSWORD "" }}
+{{ with .Env.TORRENT_HOST }}
+  torrent_host = http://{{ . }}/
+{{ else }}
+  torrent_host = http://transmission.{{ default .Env.PROXY_DOMAIN "torrent.dl" }}:9091/
+{{ end }}
+torrent_path = None
+torrent_seed_time = 0
+torrent_paused = 0
+torrent_high_bandwidth = 0
+torrent_label = ""
+torrent_label_anime = ""
+torrent_verify_cert = 0
+torrent_rpcurl = transmission
+torrent_auth_type = none
+[KODI]
+use_kodi = 1
+kodi_always_on = 1
+kodi_notify_onsnatch = 0
+kodi_notify_ondownload = 0
+kodi_notify_onsubtitledownload = 1
+kodi_update_library = 1
+kodi_update_full = 0
+kodi_update_onlyfirst = 0
+kodi_host = {{ default .Env.KODI_HOST "" }}
+kodi_username = {{ default .Env.KODI_USERNAME "" }}
+kodi_password = {{ default .Env.KODI_PASSWORD "" }}
+[Plex]
+use_plex = 0
+plex_notify_onsnatch = 0
+plex_notify_ondownload = 0
+plex_notify_onsubtitledownload = 0
+plex_update_library = 0
+plex_server_host = ""
+plex_server_token = ""
+plex_host = ""
+plex_username = ""
+plex_password = ""
+[Emby]
+use_emby = 0
+emby_host = ""
+emby_apikey = ""
+[Growl]
+use_growl = 0
+growl_notify_onsnatch = 0
+growl_notify_ondownload = 0
+growl_notify_onsubtitledownload = 0
+growl_host = ""
+growl_password = ""
+[FreeMobile]
+use_freemobile = 0
+freemobile_notify_onsnatch = 0
+freemobile_notify_ondownload = 0
+freemobile_notify_onsubtitledownload = 0
+freemobile_id = ""
+freemobile_apikey = ""
+[Prowl]
+use_prowl = 0
+prowl_notify_onsnatch = 0
+prowl_notify_ondownload = 0
+prowl_notify_onsubtitledownload = 0
+prowl_api = ""
+prowl_priority = 0
+[Twitter]
+use_twitter = 0
+twitter_notify_onsnatch = 0
+twitter_notify_ondownload = 0
+twitter_notify_onsubtitledownload = 0
+twitter_username = ""
+twitter_password = ""
+twitter_prefix = SickRage
+twitter_dmto = ""
+twitter_usedm = 0
+[Boxcar]
+use_boxcar = 0
+boxcar_notify_onsnatch = 0
+boxcar_notify_ondownload = 0
+boxcar_notify_onsubtitledownload = 0
+boxcar_username = ""
+[Boxcar2]
+use_boxcar2 = 0
+boxcar2_notify_onsnatch = 0
+boxcar2_notify_ondownload = 0
+boxcar2_notify_onsubtitledownload = 0
+boxcar2_accesstoken = "{{ default .Env.BOXCAR2_TOKEN "" }}"
+[Pushover]
+use_pushover = 0
+pushover_notify_onsnatch = 0
+pushover_notify_ondownload = 0
+pushover_notify_onsubtitledownload = 0
+pushover_userkey = ""
+pushover_apikey = ""
+pushover_device = ""
+pushover_sound] = pushover
+[Libnotify]
+use_libnotify = 0
+libnotify_notify_onsnatch = 0
+libnotify_notify_ondownload = 0
+libnotify_notify_onsubtitledownload = 0
+[NMJ]
+use_nmj = 0
+nmj_host = ""
+nmj_database = ""
+nmj_mount = ""
+[NMJv2]
+use_nmjv2 = 0
+nmjv2_host = ""
+nmjv2_database = ""
+nmjv2_dbloc = None
+[Synology]
+use_synoindex = 0
+[SynologyNotifier]
+use_synologynotifier = 0
+synologynotifier_notify_onsnatch = 0
+synologynotifier_notify_ondownload = 0
+synologynotifier_notify_onsubtitledownload = 0
+[Trakt]
+use_trakt = 0
+trakt_username = ""
+trakt_access_token = ""
+trakt_refresh_token = ""
+trakt_remove_watchlist = 0
+trakt_remove_serieslist = 0
+trakt_remove_show_from_sickrage = 0
+trakt_sync_watchlist = 0
+trakt_method_add = 0
+trakt_start_paused = 0
+trakt_use_recommended = 0
+trakt_sync = 0
+trakt_sync_remove = 0
+trakt_default_indexer = 1
+trakt_timeout = 30
+trakt_blacklist_name = ""
+[IMDB]
+use_imdb_popular = 0
+[pyTivo]
+use_pytivo = 0
+pytivo_notify_onsnatch = 0
+pytivo_notify_ondownload = 0
+pytivo_notify_onsubtitledownload = 0
+pyTivo_update_library = 0
+pytivo_host = ""
+pytivo_share_name = ""
+pytivo_tivo_name = ""
+[NMA]
+use_nma = 0
+nma_notify_onsnatch = 0
+nma_notify_ondownload = 0
+nma_notify_onsubtitledownload = 0
+nma_api = ""
+nma_priority = 0
+[Pushalot]
+use_pushalot = 0
+pushalot_notify_onsnatch = 0
+pushalot_notify_ondownload = 0
+pushalot_notify_onsubtitledownload = 0
+pushalot_authorizationtoken = ""
+[Pushbullet]
+use_pushbullet = 0
+pushbullet_notify_onsnatch = 0
+pushbullet_notify_ondownload = 0
+pushbullet_notify_onsubtitledownload = 0
+pushbullet_api = ""
+pushbullet_device = None
+[Email]
+use_email = 0
+email_notify_onsnatch = 0
+email_notify_ondownload = 0
+email_notify_onsubtitledownload = 0
+email_host = ""
+email_port = 25
+email_tls = 0
+email_user = ""
+email_password = ""
+email_from = ""
+email_list = ""
+[Newznab]
+newznab_data = "NZBs.org|https://nzbs.org/||5030,5040|0|eponly|0|1|1"
+[TorrentRss]
+torrentrss_data = ""
+[GUI]
+gui_name = slick
+theme_name = dark
+home_layout = poster
+history_layout = detailed
+history_limit = 100
+display_show_specials = 0
+coming_eps_layout = banner
+coming_eps_display_paused = 0
+coming_eps_sort = date
+coming_eps_missed_range = 7
+fuzzy_dating = 1
+trim_zero = 1
+date_preset = "%a, %b %d, %Y"
+time_preset = %I:%M:%S %p
+timezone_display = network
+poster_sortby = date
+poster_sortdir = 1
+filter_row = 1
+[Subtitles]
+use_subtitles = 1
+subtitles_languages = "eng,fre"
+SUBTITLES_SERVICES_LIST = "opensubtitles,thesubdb,tvsubtitles,addic7ed,podnapisi"
+SUBTITLES_SERVICES_ENABLED = 1|1|1|1|0
+subtitles_dir = ""
+subtitles_default = 1
+subtitles_history = 1
+embedded_subtitles_all = 0
+subtitles_finder_frequency = 1
+subtitles_multi = 1
+subtitles_extra_scripts = ""
+[FailedDownloads]
+use_failed_downloads = 1
+delete_failed = 1
+[ANIDB]
+use_anidb = 1
+anidb_username = "{{ default .Env.ANIDB_USERNAME "" }}"
+anidb_password = "{{ default .Env.ANIDB_PASSWORD "" }}"
+anidb_use_mylist = 1
+[ANIME]
+anime_split_home = 1

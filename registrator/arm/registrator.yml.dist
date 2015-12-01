@@ -1,0 +1,4 @@
+registrator:
+  build: latest/
+  volumes:
+    - "/var/run/docker.sock:/tmp/docker.sock"

@@ -1,0 +1,11 @@
+#!/bin/bash
+set -eo pipefail
+trap "exit 0" 2 15
+
+echo "**** Starting DHCP Server. Enjoy! ****"
+dockerize \
+  -template /etc/dockerize/templates/dhcpd.conf.tpl:/etc/dhcp/dhcpd.conf \
+  echo "==> Generate config" \
+  && exec $*
+
+exit 0

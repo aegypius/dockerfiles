@@ -1,0 +1,9 @@
+couchpotato:
+  build: .
+  ports:
+    - 5050
+  environment:
+    - SERVICE_5050_NAME=http
+    - SERVICE_TAGS=couch-potato
+  volumes:
+    - ~/.cache/couchpotato:/data

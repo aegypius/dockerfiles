@@ -1,0 +1,4 @@
+logrotate:
+  build: .
+  volumes:
+    - /var/lib/docker/containers:/var/lib/docker/containers/:rw

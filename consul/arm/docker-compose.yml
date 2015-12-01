@@ -1,0 +1,8 @@
+consul:
+  build: latest
+  command: consul agent -config-dir=/config -server -bootstrap -dc consul
+  ports:
+    - 8300
+    - 8400
+    - 8500
+    - "8600:53/udp"

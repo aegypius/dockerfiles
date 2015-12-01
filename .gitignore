@@ -1,4 +1,5 @@
-docker-compose.yml
+docker-compose.override.yml
 _builds
 _projects
 _steps
+.bashbrew

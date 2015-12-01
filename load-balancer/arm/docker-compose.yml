@@ -1,0 +1,7 @@
+loadbalancer: 
+  build: .
+  command: consul-template --config /etc/consul-template/config.hcl --consul=consul:8500
+  environment:
+    DOMAIN_SUFFIX: .local
+  ports: 
+    - "80:80"
