@@ -30,6 +30,7 @@ WORKDIR /app
 
 # Configure nginx
 COPY conf/nginx.conf /etc/nginx/nginx.conf
+COPY conf/nginx.tmpl /app/nginx.tmpl
 
 ENV DOCKER_HOST unix:///tmp/docker.sock
 
