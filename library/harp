@@ -1,0 +1,1 @@
+latest-arm: git://github.com/aegypius/dockerfiles@59e91c692a7ec338b2eb0b95f4ec2459dd031cdc harp/arm
