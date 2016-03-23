@@ -13,8 +13,8 @@ dnsmasq --all-servers --local-service
 mkdir -p $SB_DATA/{TV-Shows,Downloading,Torrents}
 
 cd $SB_HOME
-git checkout $SICKRAGE_CHANNEL
-git pull --verbose
+
+[ ! -z "SICKRAGE_DISABLE_UPDATE" ] && git pull
 
 . /venv/bin/activate
 export PYTHONPATH=$SB_HOME
