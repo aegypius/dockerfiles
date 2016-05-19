@@ -1,0 +1,1 @@
+latest-arm: git://github.com/aegypius/dockerfiles@3c1563e02bcdd9c28cf430f37d3ea106999a911f nginx-proxy/arm

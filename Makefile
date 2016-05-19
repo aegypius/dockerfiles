@@ -3,7 +3,7 @@
 SRC:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 NAMESPACE?=quay.io/aegypius
 BASHBREW=.bashbrew/bashbrew.sh
-BASHBREW_OPTIONS?=
+BASHBREW_OPTIONS?=--library $(SRC)/library/$(shell uname -m | sed 's/(v6l)//')
 REPOSITORIES?=--all
 
 
