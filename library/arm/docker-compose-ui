@@ -1,3 +1,0 @@
-latest-arm: git://github.com/aegypius/dockerfiles@4c595b6af86ad68038387ae06522332def55ee96 docker-compose-ui/arm/0.10
-0.10-arm:   git://github.com/aegypius/dockerfiles@4c595b6af86ad68038387ae06522332def55ee96 docker-compose-ui/arm/0.10
-0-arm:      git://github.com/aegypius/dockerfiles@4c595b6af86ad68038387ae06522332def55ee96 docker-compose-ui/arm/0.10
