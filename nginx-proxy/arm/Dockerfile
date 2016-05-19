@@ -1,8 +1,8 @@
-FROM hypriot/rpi-alpine-scratch:latest
+FROM quay.io/aegypius/nginx:latest-arm
 
 EXPOSE 80 443
 
-RUN apk add --update nginx bash \
+RUN apk add --update bash \
 	&& mkdir -p /tmp/nginx
 
 RUN apk add -t build-deps go gcc libgcc libc-dev git mercurial
