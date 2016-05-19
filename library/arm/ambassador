@@ -1,1 +1,1 @@
-latest-arm: git://github.com/aegypius/dockerfiles@a1752fc4f4bfb87b85e4d5ddfbe6645c1f79e1b0 ambassador/arm
+latest-arm: git://github.com/aegypius/dockerfiles@d718940c8546c2bf798003e04c20a6fe062dcb10 ambassador/arm

@@ -1,3 +1,3 @@
-latest-arm: git://github.com/aegypius/dockerfiles@fe97ec66f8f239d9713b7bd8f27d6900ba24da96 base/arm
-3.3-arm: git://github.com/aegypius/dockerfiles@fe97ec66f8f239d9713b7bd8f27d6900ba24da96 base/arm
-3-arm: git://github.com/aegypius/dockerfiles@fe97ec66f8f239d9713b7bd8f27d6900ba24da96 base/arm
+latest-arm: git://github.com/aegypius/dockerfiles@d718940c8546c2bf798003e04c20a6fe062dcb10 base/arm
+3.3-arm: git://github.com/aegypius/dockerfiles@d718940c8546c2bf798003e04c20a6fe062dcb10 base/arm
+3-arm: git://github.com/aegypius/dockerfiles@d718940c8546c2bf798003e04c20a6fe062dcb10 base/arm
