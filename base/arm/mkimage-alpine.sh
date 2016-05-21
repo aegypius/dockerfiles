@@ -55,9 +55,10 @@ mkbase() {
 
 conf() {
 	echo Configuration
+	> $ROOTFS/etc/apk/repositories
 	for repo in $REPOSITORIES; do
 		echo Adding repository $repo | indent
-  	printf '%s\n' $REPO/$repo > $ROOTFS/etc/apk/repositories
+		printf '%s\n' $REPO/$repo >> $ROOTFS/etc/apk/repositories
 	done
 	$TMP/sbin/apk.static --update-cache --allow-untrusted \
 		--root $ROOTFS upgrade | indent && \
