@@ -1,8 +1,8 @@
-FROM hypriot/rpi-node
+FROM hypriot/rpi-node:5
 
 EXPOSE 9000
-
-RUN npm install -g harp
+ENV HARP_VERSION=0.20.3
+RUN npm install -g harp@${HARP_VERSION}
 
 WORKDIR /app
 VOLUME /app
