@@ -16,7 +16,7 @@ ENV PATH=/usr/local/bin:$PATH \
 
 RUN apk --update add -t runtime-deps git python py-pip py-virtualenv dnsmasq bash unrar openssl libffi libxml2 libxslt \
   && apk add -t build-deps curl ca-certificates gcc python-dev musl-dev openssl-dev libffi-dev libxml2-dev libxslt-dev \
-  && git clone --single-branch --branch $SICKRAGE_CHANNEL --depth 1 $SICKRAGE_REPOSITORY /app \
+  && git clone --single-branch --branch $SICKRAGE_CHANNEL $SICKRAGE_REPOSITORY /app \
   && virtualenv venv \
   && venv/bin/pip install mako pyopenssl lxml supervisor \
   && apk del --purge build-deps \
