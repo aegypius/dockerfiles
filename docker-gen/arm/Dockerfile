@@ -1,7 +1,7 @@
-FROM quay.io/aegypius/base:latest-arm
+FROM quay.io/aegypius/base:edge-arm
 
 
-ENV VERSION 0.7.0
+ENV VERSION 0.7.3
 ENV DOWNLOAD_URL https://github.com/jwilder/docker-gen/releases/download/$VERSION/docker-gen-linux-armhf-$VERSION.tar.gz
 ENV DOCKER_HOST unix:///tmp/docker.sock
 
