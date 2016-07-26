@@ -17,11 +17,11 @@ prepare:
 	([ -d .bashbrew ] || mkdir .bashbrew) && wget -qO- https://github.com/docker-library/official-images/archive/master.tar.gz | tar xz --strip-components 2 -C .bashbrew official-images-master/bashbrew
 
 list: prepare
-	${BASHBREW} list ${LIBRARY} ${BASHBREW_OPTIONS} --namespaces=${NAMESPACE} ${REPOSITORIES}
+	${BASHBREW} ${LIBRARY} list ${BASHBREW_OPTIONS} --namespace ${NAMESPACE} ${REPOSITORIES}
 
 build: prepare
-	${BASHBREW} build ${LIBRARY} ${BASHBREW_OPTIONS} --namespaces=${NAMESPACE} ${REPOSITORIES}
+	${BASHBREW} ${LIBRARY} build ${BASHBREW_OPTIONS} --namespace ${NAMESPACE} ${REPOSITORIES}
 
 push: build
-	${BASHBREW} push ${LIBRARY} ${BASHBREW_OPTIONS} --namespaces=${NAMESPACE} ${REPOSITORIES}
+	${BASHBREW} ${LIBRARY} push ${BASHBREW_OPTIONS} --namespace ${NAMESPACE} ${REPOSITORIES}
 
