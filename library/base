@@ -1,0 +1,13 @@
+Maintainers: Nicolas LAURENT <docker@aegypius.com> (@aegypius)
+
+Tags: latest-arm
+GitRepo: https://github.com/aegypius/dockerfiles
+GitCommit: 200425daeb1da1c293396f3f3e1ea372a5185e51
+Directory: base/arm
+Constraints: arm
+
+Tags: edge-arm
+GitRepo: https://github.com/aegypius/dockerfiles
+GitCommit: 200425daeb1da1c293396f3f3e1ea372a5185e51
+Directory: base/arm
+Constraints: arm

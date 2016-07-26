@@ -1,5 +1,0 @@
-latest-arm: git://github.com/aegypius/dockerfiles@e7d1a20963e43aed909bb21458034bdf5769a6e2 nginx/arm
-1.10.1-arm: git://github.com/aegypius/dockerfiles@e7d1a20963e43aed909bb21458034bdf5769a6e2 nginx/arm
-1.10-arm:   git://github.com/aegypius/dockerfiles@e7d1a20963e43aed909bb21458034bdf5769a6e2 nginx/arm
-1.9.12-arm: git://github.com/aegypius/dockerfiles@d718940c8546c2bf798003e04c20a6fe062dcb10 nginx/arm
-1.9-arm:    git://github.com/aegypius/dockerfiles@d718940c8546c2bf798003e04c20a6fe062dcb10 nginx/arm

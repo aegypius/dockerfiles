@@ -1,0 +1,7 @@
+Maintainers: Nicolas LAURENT <docker@aegypius.com> (@aegypius)
+
+Tags: latest-arm
+GitRepo: https://github.com/aegypius/dockerfiles
+GitCommit: d718940c8546c2bf798003e04c20a6fe062dcb10
+Directory: nginx-proxy/arm
+Constraints: arm

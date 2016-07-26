@@ -1,2 +1,0 @@
-latest-arm: git://github.com/aegypius/dockerfiles@200425daeb1da1c293396f3f3e1ea372a5185e51 base/arm
-edge-arm: git://github.com/aegypius/dockerfiles@200425daeb1da1c293396f3f3e1ea372a5185e51 base/arm

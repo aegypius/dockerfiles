@@ -3,7 +3,8 @@
 SRC:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 NAMESPACE?=quay.io/aegypius
 BASHBREW=.bashbrew/bashbrew.sh
-LIBRARY?=--library $(SRC)/library/$(shell uname -m | sed 's/v6l//')
+CONSTRAINT?=--constraint $(shell uname -m | sed 's/v6l//')
+LIBRARY?=--library $(SRC)/library
 BASHBREW_OPTIONS?=
 REPOSITORIES?=--all
 
@@ -17,11 +18,10 @@ prepare:
 	([ -d .bashbrew ] || mkdir .bashbrew) && wget -qO- https://github.com/docker-library/official-images/archive/master.tar.gz | tar xz --strip-components 2 -C .bashbrew official-images-master/bashbrew
 
 list: prepare
-	${BASHBREW} ${LIBRARY} list ${BASHBREW_OPTIONS} --namespace ${NAMESPACE} ${REPOSITORIES}
+	${BASHBREW} ${LIBRARY} ${CONSTRAINT} ${BASHBREW_OPTIONS} list --apply-constraints ${REPOSITORIES}
 
 build: prepare
-	${BASHBREW} ${LIBRARY} build ${BASHBREW_OPTIONS} --namespace ${NAMESPACE} ${REPOSITORIES}
+	${BASHBREW} ${LIBRARY} ${CONSTRAINT} ${BASHBREW_OPTIONS} build --namespace ${NAMESPACE} ${REPOSITORIES}
 
 push: build
-	${BASHBREW} ${LIBRARY} push ${BASHBREW_OPTIONS} --namespace ${NAMESPACE} ${REPOSITORIES}
-
+	${BASHBREW} ${LIBRARY} ${CONSTRAINT} ${BASHBREW_OPTIONS} push --namespace ${NAMESPACE} ${REPOSITORIES}
