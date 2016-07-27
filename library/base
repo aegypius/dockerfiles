@@ -1,13 +1,13 @@
 Maintainers: Nicolas LAURENT <docker@aegypius.com> (@aegypius)
 
-Tags: latest-arm
+Tags: latest-arm, 3.4-arm, 3-arm
 GitRepo: https://github.com/aegypius/dockerfiles
-GitCommit: 200425daeb1da1c293396f3f3e1ea372a5185e51
-Directory: base/arm
+GitCommit: c57902dde04ed621ce48ca083f11cfb4b6f0218c
+Directory: base/arm/3.4
 Constraints: arm
 
 Tags: edge-arm
 GitRepo: https://github.com/aegypius/dockerfiles
-GitCommit: 200425daeb1da1c293396f3f3e1ea372a5185e51
-Directory: base/arm
+GitCommit: c57902dde04ed621ce48ca083f11cfb4b6f0218c
+Directory: base/arm/edge
 Constraints: arm
