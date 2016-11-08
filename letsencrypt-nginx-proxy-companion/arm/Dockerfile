@@ -13,10 +13,11 @@ RUN apk update && \
   apk del tar && \
   chmod +rx /tmp/install_simp_le.sh && \
   sync && \
+  sed -i 's/py-pip/py2-pip/' /tmp/install_simp_le.sh && \
   /tmp/install_simp_le.sh && \
   mv /tmp/app/* /app && \
   rm -f /tmp/install_simp_le.sh && \
-	rm -rf /tmp/app
+  rm -rf /tmp/app
 
 ENTRYPOINT ["/bin/bash", "/app/entrypoint.sh" ]
 CMD ["/bin/bash", "/app/start.sh" ]
