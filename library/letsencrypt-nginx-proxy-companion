@@ -2,6 +2,6 @@ Maintainers: Nicolas LAURENT <docker@aegypius.com> (@aegypius)
 
 Tags: latest-arm
 GitRepo: https://github.com/aegypius/dockerfiles
-GitCommit: d718940c8546c2bf798003e04c20a6fe062dcb10
+GitCommit: 8308aa9b68fd9b585b24f60205033d18c5fe8887
 Directory: letsencrypt-nginx-proxy-companion/arm
 Constraints: arm
