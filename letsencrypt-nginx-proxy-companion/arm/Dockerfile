@@ -8,7 +8,7 @@ ENV DEBUG=false \
 
 RUN apk update && \
   apk upgrade && \
-  apk add bash curl ca-certificates procps jq tar && \
+  apk add bash curl ca-certificates procps jq tar py2-cryptography && \
   curl -sL https://github.com/alastaircoote/docker-letsencrypt-nginx-proxy-companion/archive/$DOCKER_LSE_COMPANION_VERSION.tar.gz | tar -xvz --strip-components=1 -C /tmp && \
   apk del tar && \
   chmod +rx /tmp/install_simp_le.sh && \
