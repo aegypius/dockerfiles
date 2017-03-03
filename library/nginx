@@ -2,7 +2,7 @@ Maintainers: Nicolas LAURENT <docker@aegypius.com> (@aegypius)
 
 Tags: latest-arm, 1.11.10-arm, 1.11-arm
 GitRepo: https://github.com/aegypius/dockerfiles
-GitCommit: decc74307ae5c522132dc9f204da9a5f7ccfebe4
+GitCommit: 1052ca94272162aa8c185c85fc62472787c62467
 Directory: nginx/arm
 Constraints: arm
 
