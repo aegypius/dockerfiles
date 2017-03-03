@@ -1,7 +1,7 @@
 #
 # Based on https://github.com/nginxinc/docker-nginx
 #
-FROM quay.io/aegypius/base:latest-arm
+FROM armhf/alpine:3.5
 
 ENV NGINX_VERSION 1.11.10
 
