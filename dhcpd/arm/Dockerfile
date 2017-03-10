@@ -1,5 +1,5 @@
 FROM armbuild/alpine:latest
-MAINTAINER Nicolas LAURENT <docker@aegypius.com>
+LABEL maintainer "Nicolas LAURENT <docker@aegypius.com>"
 
 EXPOSE 67 67/udp \
   547 547/udp \

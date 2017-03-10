@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER Nicolas LAURENT <docker@aegypius.com>
+LABEL maintainer "Nicolas LAURENT <docker@aegypius.com>"
 
 EXPOSE 8081
 

@@ -1,5 +1,5 @@
 FROM quay.io/aegypius/base:latest-arm
-MAINTAINER Nicolas LAURENT <docker@aegypius.com>
+LABEL maintainer "Nicolas LAURENT <docker@aegypius.com>"
 
 EXPOSE 8081
 

@@ -1,5 +1,5 @@
 FROM armbuild/alpine:latest
-MAINTAINER Nicolas LAURENT <docker@aegypius.com>
+LABEL maintainer "Nicolas LAURENT <docker@aegypius.com>"
 
 RUN apk --update add logrotate
 RUN echo "*/5 *	* * *	/usr/sbin/logrotate /etc/logrotate.conf" >> /etc/crontabs/root

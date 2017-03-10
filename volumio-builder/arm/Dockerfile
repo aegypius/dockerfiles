@@ -1,5 +1,5 @@
 FROM sdhibit/rpi-raspbian:latest
-MAINTAINER Nicolas LAURENT <docker@aegypius.com>
+LABEL maintainer "Nicolas LAURENT <docker@aegypius.com>"
 
 WORKDIR /builder
 

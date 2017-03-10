@@ -1,5 +1,5 @@
 FROM quay.io/aegypius/armhf-alpine:edge
-MAINTAINER Nicolas LAURENT <innercircle@aegypius.com>
+LABEL maintainer "Nicolas LAURENT <docker@aegypius.com>"
 
 RUN chmod 0755 / \
   && apk add --update tini \

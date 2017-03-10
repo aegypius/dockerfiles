@@ -1,5 +1,5 @@
 FROM alpine:3.1
-MAINTAINER Nicolas LAURENT <docker@aegypius.com>
+LABEL maintainer "Nicolas LAURENT <docker@aegypius.com>"
 
 RUN apk --update upgrade \
 	&& apk add -t build-deps git \
