@@ -1,7 +1,0 @@
-Maintainers: Nicolas LAURENT <docker@aegypius.com> (@aegypius)
-
-Tags: latest-arm, 0.7.3-arm, 0.7-arm
-GitRepo: https://github.com/aegypius/dockerfiles
-GitCommit: 217f3bcab7b7471e2dba7464fbf62f27f5c30888
-Directory: docker-gen/arm
-Constraints: arm
