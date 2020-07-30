@@ -16,7 +16,5 @@ cd $SB_HOME
 
 [ ! -z "SICKRAGE_DISABLE_UPDATE" ] && git pull
 
-. /venv/bin/activate
-export PYTHONPATH=$SB_HOME
 exec -a "supervisord" "supervisord" "-c" "/etc/supervisord.conf"
 exit 0
